@@ -1,6 +1,6 @@
 #--------- Generic stuff all our Dockerfiles should start with so we get caching ------------
-ARG IMAGE_VERSION=9.0-jdk11-openjdk-slim-buster
-ARG JAVA_HOME=/usr/local/openjdk-11
+ARG IMAGE_VERSION=9.0-jdk8-openjdk-slim-buster
+ARG JAVA_HOME=/usr/local/openjdk-8
 FROM tomcat:$IMAGE_VERSION
 
 RUN sed -i s/deb.debian.org/mirrors.aliyun.com/g /etc/apt/sources.list
