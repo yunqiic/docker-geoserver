@@ -3,6 +3,8 @@ ARG IMAGE_VERSION=9.0-jdk11-openjdk-slim-buster
 ARG JAVA_HOME=/usr/local/openjdk-11
 FROM tomcat:$IMAGE_VERSION
 
+RUN sed -i s/deb.debian.org/mirrors.aliyun.com/g /etc/apt/sources.list
+
 LABEL maintainer="Tim Sutton<tim@linfiniti.com>"
 ARG GS_VERSION=2.20.2
 ARG WAR_URL=https://www.7otech.com/geoserver.war
