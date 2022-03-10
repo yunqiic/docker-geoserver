@@ -7,7 +7,7 @@ unzip geoserver-2.11.0-bin.zip -d docker-geoserver/
 mv geoserver-2.11.0 geoserver
  
 # 修改geoserver的监听端口，默认8080，防止冲突
-# cd 到geoserver目录下,修改start.ini中的监听port为9090.保存退出
+# cd 到geoserver目录下,修改start.ini中的监听port为8011.保存退出
 
 sudo docker build -t holly/geoserver .
 
