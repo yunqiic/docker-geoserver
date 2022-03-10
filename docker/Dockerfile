@@ -23,4 +23,3 @@ ENV GEOSERVER_HOME /usr/local/geoserver
 # 暴露8011端口
 EXPOSE 8011
 # 设置镜像启动时执行的命令
-ENTRYPOINT ["sh","/usr/local/geoserver/bin/startup.sh"]
