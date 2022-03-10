@@ -1,5 +1,5 @@
 # 基础镜像，基于openjdk:8-jre-alpine操作系统
-FROM openjdk:8-jre-alpine
+FROM openjdk:8-jre
 # 维护人员信息
 MAINTAINER PeterZhang "1097692918@qq.com"
 
