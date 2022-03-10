@@ -14,7 +14,7 @@ docker build -t holly/geoserver .
 # 可以看到刚生成的geoserver镜像
 docker images
 # 执行geoserver镜像
-docker run -d --name geoserver -p 9090:9090 holly/geoserver 
+docker run -d --name geoserver -p 8011:8011 holly/geoserver 
  
 docker run -d --name geoserver -p 8080:8080  -v /root/geoserver/data_dir:/usr/local/geoserver/data_dir geoserver 
 # 查看geoserver镜像是否运行
