@@ -16,6 +16,8 @@ sudo docker images
 sudo docker run -d --name geoserver1 -p 8011:8011 holly/geoserver
 sudo docker run -it --rm --name geoserver1 -p 8011:8011 holly/geoserver sh
 
+sudo docker run -d --name geoserver1 -p 8011:8011 -v $(pwd)/data_dir:/usr/local/geoserver/data_dir holly/geoserver
+
 sudo docker run -d --name geoserver1 -p 8080:8080  -v /root/geoserver/data_dir:/usr/local/geoserver/data_dir geoserver 
 # 查看geoserver镜像是否运行
 sudo docker ps
