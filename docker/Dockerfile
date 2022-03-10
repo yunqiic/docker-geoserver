@@ -1,7 +1,7 @@
 # 基础镜像，基于openjdk:8-jre-alpine操作系统
 FROM openjdk:8-jre-alpine
 # 维护人员信息
-MAINTAINER Peter zhang "1097692918@qq.com"
+MAINTAINER PeterZhang "1097692918@qq.com"
 # 移动geoserver文件夹到/usr/local/geoserver 下
 ADD geoserver /usr/local/geoserver
 # 配置环境变量
