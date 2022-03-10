@@ -6,8 +6,8 @@ MAINTAINER PeterZhang "1097692918@qq.com"
 RUN sed -i s/deb.debian.org/mirrors.aliyun.com/g /etc/apt/sources.list
 
 RUN apt-get -y update; apt-get -y --no-install-recommends install fonts-cantarell lmodern ttf-aenigma \
-    ttf-georgewilliams ttf-bitstream-vera ttf-sjfonts tv-fonts  libapr1-dev libssl-dev  \
-    gdal-bin libgdal-java wget zip unzip curl xsltproc certbot  cabextract gettext postgresql-client figlet
+    ttf-bitstream-vera ttf-sjfonts tv-fonts  libapr1-dev libssl-dev  \
+    gdal-bin wget zip unzip curl xsltproc certbot  cabextract gettext postgresql-client figlet
 
 RUN set -e \
     export DEBIAN_FRONTEND=noninteractive \
