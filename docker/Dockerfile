@@ -3,13 +3,6 @@ FROM openjdk:8-jre
 # 维护人员信息
 MAINTAINER PeterZhang "1097692918@qq.com"
 
-# 移动geoserver文件夹到/usr/local/geoserver 下
-ADD geoserver /usr/local/geoserver
-# 配置环境变量
-ENV GEOSERVER_HOME /usr/local/geoserver
-# 暴露8011端口
-EXPOSE 8011
-
 RUN sed -i s/deb.debian.org/mirrors.aliyun.com/g /etc/apt/sources.list
 
 RUN apt-get -y update; apt-get -y --no-install-recommends install fonts-cantarell lmodern ttf-aenigma \
@@ -21,6 +14,13 @@ RUN set -e \
     dpkg-divert --local --rename --add /sbin/initctl \
     && (echo "Yes, do as I say!" | apt-get remove --force-yes login) \
     && apt-get clean \
-    && rm -rf /var/lib/apt/lists/* \
+    && rm -rf /var/lib/apt/lists/*
 
+# 移动geoserver文件夹到/usr/local/geoserver 下
+ADD geoserver /usr/local/geoserver
+# 配置环境变量
+ENV GEOSERVER_HOME /usr/local/geoserver
+# 暴露8011端口
+EXPOSE 8011
 # 设置镜像启动时执行的命令
+ENTRYPOINT ["sh","/usr/local/geoserver/bin/startup.sh"]
